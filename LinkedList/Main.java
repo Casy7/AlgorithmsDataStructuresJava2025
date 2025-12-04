@@ -7,7 +7,17 @@ public class Main {
 
         Solution solver = new Solution();
         ListNode mergedHead = solver.mergeTwoLists(list1, list2);
+        printList(mergedHead);
 
+    }
+    
+    public static void printList(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val + " ");
+            current = current.next;
+        }
+        System.out.println();
     }
 
 }
