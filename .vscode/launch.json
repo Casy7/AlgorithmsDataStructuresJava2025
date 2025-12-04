@@ -1,14 +1,12 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
+{
             "type": "java",
-            "name": "Debug Current File (UTF-8)",
+            "name": "Запуск Активного Файлу (без аргументів)",
             "request": "launch",
-            "mainClass": "${file}",
-            "vmArgs": "-Dfile.encoding=UTF-8",
-            "projectName": "${workspaceFolderBasename}",
-            "console": "integratedTerminal"
-        }
+            "mainClass": "${file}", 
+            "projectName": ""
+        },
     ]
 }
