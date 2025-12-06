@@ -1,12 +1,15 @@
 {
-    "version": "0.2.0",
     "configurations": [
-{
+    {
             "type": "java",
-            "name": "Запуск Активного Файлу (без аргументів)",
+            "name": "Запуск з UTF-8 (для кирилиці)",
             "request": "launch",
-            "mainClass": "${file}", 
-            "projectName": ""
-        },
+            "mainClass": "${file}",
+            "projectName": "",
+
+            "vmArgs": [
+                "-Dfile.encoding=UTF-8"
+            ]
+        }
     ]
 }
