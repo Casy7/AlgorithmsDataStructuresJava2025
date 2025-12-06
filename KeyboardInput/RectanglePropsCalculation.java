@@ -6,9 +6,9 @@ public class RectanglePropsCalculation {
 
     public static void main(String[] args) {
         try (Scanner con = new Scanner(System.in)) {
+            int a;
+            int b;
             while (con.hasNextInt()) {
-                int a;
-                int b;
 
                 a = con.nextInt();
                 b = con.nextInt();
