@@ -1,14 +1,23 @@
 {
+    "version": "0.2.0",
     "configurations": [
-    {
+        {
             "type": "java",
-            "name": "Запуск з UTF-8 (для кирилиці)",
+            "name": "GravityPong",
+            "request": "launch",
+            "mainClass": "GravityPong.GravityPong",
+            "projectName": "Java_4bca634f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Java",
             "request": "launch",
             "mainClass": "${file}",
             "projectName": "",
-
             "vmArgs": [
-                "-Dfile.encoding=UTF-8"
+                "-Dfile.encoding=UTF-8",
+                "--module-path",
+                "${workspaceFolder}/env/lib"
             ]
         }
     ]
