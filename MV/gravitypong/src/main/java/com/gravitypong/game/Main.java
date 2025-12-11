@@ -20,7 +20,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
 
 public class Main extends Application {
 
@@ -50,14 +49,9 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         this.primaryStage = stage;
-        
-        
         initGravityOptions(); 
 
-        
-        mainScene = new Scene(new Pane(), WIDTH, HEIGHT);
-        
-        
+        mainScene = new Scene(new Pane(), WIDTH, HEIGHT);        
         showMenu();
 
         stage.setTitle("SOLID Gravity Pong");
@@ -80,7 +74,7 @@ public class Main extends Application {
         title.setFill(Color.CYAN);
 
         
-        Label diffLabel = new Label("Складність:");
+        Label diffLabel = new Label("Difficulty:");
         diffLabel.setTextFill(Color.WHITE);
         
         ComboBox<Difficulty> diffBox = new ComboBox<>();
@@ -90,7 +84,7 @@ public class Main extends Application {
         diffBox.setStyle("-fx-font-size: 16px; -fx-base: #444;");
 
         
-        Label gravLabel = new Label("Режим Гравітації:");
+        Label gravLabel = new Label("Gravity mode:");
         gravLabel.setTextFill(Color.WHITE);
 
         ComboBox<GravityOption> gravBox = new ComboBox<>();
@@ -100,7 +94,7 @@ public class Main extends Application {
         gravBox.setStyle("-fx-font-size: 16px; -fx-base: #444;");
 
         
-        Button startBtn = new Button("ПОЧАТИ ГРУ");
+        Button startBtn = new Button("Start Game");
         startBtn.setStyle("-fx-font-size: 20px; -fx-base: #00AA00; -fx-text-fill: white; -fx-font-weight: bold;");
         startBtn.setPrefWidth(200);
         startBtn.setOnAction(e -> startGame());
@@ -123,16 +117,9 @@ private void startGame() {
 
         initGameWorld();
 
-        // Створюємо хендлер
+
         input = new InputHandler(mainScene);
 
-        // ❌ ВИДАЛЯЄМО ЦЕЙ ШМАТОК! Він ламав управління.
-        /* mainScene.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.ESCAPE) { showMenu(); }
-        });
-        */
-        
-        // ✅ ВАЖЛИВО: Просимо фокус на ігрове поле, щоб клавіші точно спрацювали
         gameRoot.requestFocus(); 
 
         gameTimer = new AnimationTimer() {
@@ -231,9 +218,9 @@ private void handleInput() {
     private void initGravityOptions() {
         gravityOptions = new java.util.ArrayList<>();
         gravityOptions.add(new GravityOption("Zero Gravity (Classic)", new DirectionalGravity(0, 0)));
-        gravityOptions.add(new GravityOption("Earth Gravity (Down)", new DirectionalGravity(0, 0.25)));
-        gravityOptions.add(new GravityOption("Windy Day (Right)", new DirectionalGravity(0.15, 0)));
-        gravityOptions.add(new GravityOption("Black Hole (Center)", new CenterGravity(0.15)));
+        gravityOptions.add(new GravityOption("Earth Gravity (Down)", new DirectionalGravity(0, -0.25)));
+        gravityOptions.add(new GravityOption("Windy Day (Right)", new DirectionalGravity(0.05, 0)));
+        gravityOptions.add(new GravityOption("White Hole (Center)", new CenterGravity(-0.15)));
         
         
         selectedGravity = gravityOptions.get(0);

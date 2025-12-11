@@ -42,28 +42,36 @@ public class PhysicsEngine {
         checkCollision(ball, ai);
     }
 
-    private void checkCollision(Ball b, Paddle p) {
+private void checkCollision(Ball b, Paddle p) {
+        // collision check
         if (b.pos.x < p.pos.x + p.width
                 && b.pos.x + b.width > p.pos.x
                 && b.pos.y < p.pos.y + p.height
                 && b.pos.y + b.height > p.pos.y) {
 
-            b.velocity.x *= -1.1; // Acceleration
+            // checking ball flight direction
+            double ballCenter = b.pos.x + b.width / 2;
+            double paddleCenter = p.pos.x + p.width / 2;
 
-            // Random bounce angle
+            
+            boolean movingTowardsPaddle = (ballCenter < paddleCenter && b.velocity.x > 0) || 
+                                          (ballCenter > paddleCenter && b.velocity.x < 0);
+            
+            if (!movingTowardsPaddle) return; 
+
+            b.velocity.x *= -1.1; 
             b.velocity.y += (Math.random() - 0.5) * 2;
 
-            // Push the ball back
-            if (b.velocity.x > 0) {
+            // pushing the ball out of the paddle
+            if (ballCenter < paddleCenter) {
                 b.pos.x = p.pos.x - b.width - 1;
-            } 
-            else {
+            } else {
                 b.pos.x = p.pos.x + p.width + 1;
             }
         }
     }
 
-    // Перевірка на гол
+    // Does the ball hit the goal?
     public int checkGoal(Ball ball) {
         if (ball.pos.x < 0) {
             return 2; // AI забив
