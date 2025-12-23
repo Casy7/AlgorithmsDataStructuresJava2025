@@ -1,24 +1,25 @@
 package com.gravitypong.game.GameObjects;
-import javafx.scene.paint.Color;
+package com.gravitypong.game.model;
 
-import javafx.scene.shape.Rectangle;
+import com.gravitypong.game.controller.PaddleController;
 
 public class Paddle extends GameObject {
-    private double speed;
+    public double speed;
+    private PaddleController controller; // 👈 Залежність від АБСТРАКЦІЇ
 
-    public Paddle(double x, double y, Color color, double speed) {
+    public Paddle(double x, double y, double speed, PaddleController controller) {
         super(x, y, 20, 100);
         this.speed = speed;
-        
-        Rectangle rect = new Rectangle(width, height, color);
-        this.view = rect;
+        this.controller = controller;
     }
 
-    public void moveUp() { pos.y -= speed; }
-    public void moveDown() { pos.y += speed; }
-    
-    // Screen clamp
-    public void clamp(double screenHeight) {
+    public void update(Ball ball, double screenHeight) {
+        // Ракетка питає у контролера: "Куди мені йти?"
+        double direction = controller.getMoveDirection(this, ball);
+        
+        pos.y += direction * speed;
+
+        // Clamping (Логіка обмеження - це частина фізики/моделі)
         if (pos.y < 0) pos.y = 0;
         if (pos.y > screenHeight - height) pos.y = screenHeight - height;
     }

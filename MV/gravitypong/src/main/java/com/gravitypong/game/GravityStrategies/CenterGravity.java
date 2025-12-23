@@ -1,11 +1,8 @@
 package com.gravitypong.game.GravityStrategies;
 
 
-import com.gravitypong.game.Vector2D;
 import com.gravitypong.game.GameObjects.Ball;
-import com.gravitypong.game.GravityStrategies.GravityStrategy;
-
-
+import com.gravitypong.game.Vector2D;
 
 
 public class CenterGravity implements GravityStrategy {

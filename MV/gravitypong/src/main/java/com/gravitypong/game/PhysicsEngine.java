@@ -59,7 +59,7 @@ private void checkCollision(Ball b, Paddle p) {
             
             if (!movingTowardsPaddle) return; 
 
-            b.velocity.x *= -1.1; 
+            b.velocity.x *= -1.03; 
             b.velocity.y += (Math.random() - 0.5) * 2;
 
             // pushing the ball out of the paddle

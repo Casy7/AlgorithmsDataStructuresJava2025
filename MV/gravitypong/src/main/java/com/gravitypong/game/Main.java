@@ -54,7 +54,7 @@ public class Main extends Application {
         mainScene = new Scene(new Pane(), WIDTH, HEIGHT);        
         showMenu();
 
-        stage.setTitle("SOLID Gravity Pong");
+        stage.setTitle("Gravity Pong");
         stage.setScene(mainScene);
         stage.show();
     }
