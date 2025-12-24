@@ -1,7 +1,7 @@
-package com.gravitypong.game.GravityStrategies;
+package com.gravitypong.game.gravitystrategies;
 
 
-import com.gravitypong.game.GameObjects.Ball;
+import com.gravitypong.game.model.Ball;
 import com.gravitypong.game.Vector2D;
 
 

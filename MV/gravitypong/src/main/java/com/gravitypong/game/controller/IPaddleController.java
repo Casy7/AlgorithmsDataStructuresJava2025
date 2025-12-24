@@ -1,4 +1,4 @@
-package com.gravitypong.game.GameObjects.Paddle;
+package com.gravitypong.game.controller;
 
 import com.gravitypong.game.model.Ball;
 import com.gravitypong.game.model.Paddle;

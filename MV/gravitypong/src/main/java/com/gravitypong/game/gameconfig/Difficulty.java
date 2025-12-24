@@ -1,4 +1,4 @@
-package com.gravitypong.game;
+package com.gravitypong.game.gameconfig;
 
 public enum Difficulty {
     EASY(4.0, 3.0), 

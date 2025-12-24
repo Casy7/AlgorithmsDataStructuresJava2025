@@ -1,4 +1,5 @@
-package com.gravitypong.game.GameObjects;
+package com.gravitypong.game.gameobjects;
+
 import com.gravitypong.game.Vector2D;
 
 public abstract class GameObject {
