@@ -3,7 +3,7 @@ import com.gravitypong.game.gravitystrategies.*;
 
 public enum GravityOption {
     CLASSIC("Zero Gravity (Classic)", new DirectionalGravity(0, 0)),
-    EARTH("Earth Gravity (Down)", new DirectionalGravity(0, 0.25)),
+    EARTH("Earth Gravity (Down)", new DirectionalGravity(0, 0.2)),
     WIND("Windy Day (Left)", new DirectionalGravity(-0.05, 0)),
     HOLE("White Hole (Center)", new CenterGravity(-0.15));
 
