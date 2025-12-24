@@ -1,6 +1,6 @@
 package com.gravitypong.game;
 
-import com.gravitypong.game.gameconfig.*; // Імпортуємо наші Enums
+import com.gravitypong.game.gameconfig.*;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -56,7 +56,7 @@ public class Main extends Application {
         Label diffLabel = new Label("Difficulty:");
         diffLabel.setTextFill(Color.WHITE);
         ComboBox<Difficulty> diffBox = new ComboBox<>();
-        diffBox.getItems().addAll(Difficulty.values()); // Enum values
+        diffBox.getItems().addAll(Difficulty.values());
         diffBox.setValue(selectedDifficulty);
         diffBox.setOnAction(e -> selectedDifficulty = diffBox.getValue());
 
@@ -64,7 +64,7 @@ public class Main extends Application {
         Label gravLabel = new Label("Gravity mode:");
         gravLabel.setTextFill(Color.WHITE);
         ComboBox<GravityOption> gravBox = new ComboBox<>();
-        gravBox.getItems().addAll(GravityOption.values()); // Enum values!
+        gravBox.getItems().addAll(GravityOption.values());
         gravBox.setValue(selectedGravity);
         gravBox.setOnAction(e -> selectedGravity = gravBox.getValue());
 
